@@ -1,0 +1,11 @@
+
+- city: London
+  result: [51.5073509, -0.1277583]
+- city : Paris
+  result: [48.856614, 2.3522219]
+- city: Moscow
+  result: [55.755826, 37.6173]
+- city: New York
+  result: [40.7127837, -74.0059413]
+- city: Sydney
+result: [-33.8674869, 151.2069902]
