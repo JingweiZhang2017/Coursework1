@@ -27,7 +27,8 @@ def Map_initial_test():
 
 def green_test(mock_get, mockimage):
     with open(os.path.join(os.path.dirname(__file__),'fixtures', 'greenpixels.yaml')) as fixtures_file:
-        fixture = yaml.load(fixtures_file)
+        fixtures = yaml.load(fixtures_file)
+        for fixture in fixtures:
         testMap = Map(fixture['long'], fixture['lat'], size=(5, 5))
         testresult = testMap.green(fixture['threshold'])
         np.testing.assert_array_equal(np.asarray(fixture['result']), testresult)
@@ -35,7 +36,8 @@ def green_test(mock_get, mockimage):
 
 def count_test(mock_get, mockimage):
     with open(os.path.join(os.path.dirname(__file__),'fixtures', 'greenpixels.yaml')) as fixtures_file:
-        fixture = yaml.load(fixtures_file)
+        fixtures = yaml.load(fixtures_file)
+        for fixture in fixtures:
         testMap = Map(fixture['long'], fixture['lat'], size=(5,5))
         testcount= testMap.count_green(fixture['threshold'])
         np.testing.assert_array_equal(np.asarray(fixture['count']), testcount)
